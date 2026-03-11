@@ -1,0 +1,228 @@
+:root {
+  --White: #ffffff;
+  --Grey: #949494;
+  --Blue-800: #242742;
+  --Blue-700: #36384d;
+  --Red: #ff6155;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.card {
+  background-color: var(--White);
+}
+.card .content {
+  padding: 0 25px;
+}
+.card .image img {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.card .content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--Blue-800);
+  margin-bottom: 24px;
+}
+.card .content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Blue-800);
+  max-inline-size: 34ch;
+  margin-bottom: 24px;
+}
+ul {
+  list-style: none;
+  margin-bottom: 40px;
+}
+ul li {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Blue-800);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+ul li::before {
+  content: "";
+  width: 21px;
+  height: 21px;
+  background-image: url(images/icon-success.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+label {
+  display: block;
+}
+input {
+  width: 100%;
+  padding: 16px 24px;
+  border: 1px solid var(--Grey);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+button {
+  width: 100%;
+  background-color: var(--Blue-800);
+  color: var(--White);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  cursor: pointer;
+}
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.labels label {
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 700;
+  color: var(--Blue-800);
+}
+::placeholder {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+}
+input:focus {
+  outline: none;
+  border: 1px solid var(--Blue-800);
+  color: var(--Blue-800);
+}
+.error-msg {
+  color: #ff6155;
+  line-height: 150%;
+  font-size: 12px;
+  font-weight: 700;
+  display: none;
+}
+#success-msg {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+#success-msg img {
+  margin-bottom: 32px;
+}
+#success-msg h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+#success-msg p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+#dismiss-btn {
+  margin-top: auto;
+}
+.hidden {
+  display: none !important;
+}
+.form-control.error input {
+  display: block;
+  border: 1px solid var(--Red);
+  color: var(--Red);
+  background-color: #ffe7e6;
+}
+.form-control.error .error-msg {
+  display: block;
+}
+.form-control.error input::placeholder {
+  color: var(--Red);
+  opacity: 0.7;
+}
+@media (min-width: 768px) {
+  body {
+    background-color: var(--Blue-800);
+  }
+  .card {
+    width: 608px;
+    padding: 40px;
+    border-radius: 36px;
+  }
+  .card .content h1 {
+    font-size: 56px;
+  }
+  .card .content p {
+    max-inline-size: none;
+  }
+  ul {
+    margin-bottom: 24px;
+  }
+  input {
+    margin-bottom: 16px;
+  }
+  #success-msg {
+    background-color: var(--White);
+    width: 504px;
+    min-height: 520px;
+    border-radius: 36px;
+    padding: 64px;
+  }
+  #dismiss-btn {
+    margin-top: 32px;
+  }
+  #dismiss-btn:hover,
+  #dismiss-btn:active {
+    background-image: linear-gradient(to right, #ff6a3a, #ff527b);
+    color: var(--White);
+    border: none;
+    box-shadow: 0 16px 32px rgba(255, 97, 85, 0.4);
+  }
+}
+@media (min-width: 1440px) {
+  .card {
+    width: 904px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 64px;
+    padding: 32px;
+  }
+  .card .image img {
+    margin-bottom: 0;
+  }
+  .card .content {
+    padding: 20px 25px;
+  }
+  .card .content h1 {
+    margin-bottom: 32px;
+  }
+  .card .content p {
+    margin-bottom: 32px;
+  }
+  .labels label {
+    margin-top: 24px;
+  }
+  form button:hover,
+  form button:active {
+    background-image: linear-gradient(to right, #ff6a3a, #ff527b);
+    color: var(--White);
+    border: 1px solid transparent;
+    box-shadow: 0 16px 32px hsla(4, 100%, 67%, 0.4);
+  }
+  .form-control.error .error-msg {
+    margin-top: auto;
+  }
+}
