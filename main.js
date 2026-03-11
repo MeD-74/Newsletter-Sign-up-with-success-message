@@ -6,12 +6,19 @@ let errorMsg = document.querySelector(".error-msg");
 let input = document.querySelector("#email");
 let changeMail = document.querySelector("#user-email");
 let dismiss = document.querySelector("#dismiss-btn");
+let submitBtn = document.querySelector("#form button");
 
 function isValidEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
-
+input.addEventListener("input", function () {
+  if (input.value.trim() !== "") {
+    submitBtn.classList.add("has-data");
+  } else {
+    submitBtn.classList.remove("has-data");
+  }
+});
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   let emailValue = input.value.trim();
@@ -31,4 +38,5 @@ form.addEventListener("submit", function (e) {
 dismiss.addEventListener("click", function (e) {
   card.classList.remove("hidden");
   successMsg.classList.add("hidden");
+  input.value = "";
 });

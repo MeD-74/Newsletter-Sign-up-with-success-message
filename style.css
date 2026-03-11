@@ -216,7 +216,8 @@ input:focus {
     margin-top: 24px;
   }
   form button:hover,
-  form button:active {
+  form button:active,
+  form button.has-data {
     background-image: linear-gradient(to right, #ff6a3a, #ff527b);
     color: var(--White);
     border: 1px solid transparent;
